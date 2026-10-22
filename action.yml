@@ -17,7 +17,7 @@ inputs:
     description: Folder to write hoops.svg (light) and hoops-dark.svg (dark) into.
     default: dist
   jersey:
-    description: A preset (blue-gold, purple-gold, green-white, red-white, orange-navy, black-teal) or two hex colours, "primary,trim".
+    description: A preset (blue-gold, purple-gold, green-white, red-white, orange-navy, black-teal, magenta-cyan, teal-orange, purple-mint, green-gold, wine-sky, cobalt-orange) or two hex colours, "primary,trim".
     default: blue-gold
   skin:
     description: The player's skin tone, as a hex colour.
