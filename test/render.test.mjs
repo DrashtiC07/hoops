@@ -160,6 +160,12 @@ test('jersey presets and custom colours', () => {
   assert.deepEqual(parseJersey('slate-lime'), ['#334155', '#a3e635']);
   assert.deepEqual(parseJersey('burgundy-sand'), ['#6b1f3a', '#f2c078']);
   assert.deepEqual(parseJersey('teal-coral'), ['#115e59', '#ff9a8b']);
+  assert.deepEqual(parseJersey('magenta-cyan'), ['#e60067', '#00f5d4']);
+  assert.deepEqual(parseJersey('teal-orange'), ['#009688', '#ff6d00']);
+  assert.deepEqual(parseJersey('purple-mint'), ['#5a189a', '#06d6a0']);
+  assert.deepEqual(parseJersey('green-gold'), ['#006233', '#ffc72c']);
+  assert.deepEqual(parseJersey('wine-sky'), ['#7b113a', '#38bdf8']);
+  assert.deepEqual(parseJersey('cobalt-orange'), ['#0052cc', '#ff5400']);
   assert.deepEqual(parseJersey(' #ABC , #123456 '), ['#abc', '#123456']);
   assert.throws(() => parseJersey('lakers'), /jersey must be/);
   assert.throws(() => parseJersey('#fff,red'), /jersey must be/);

@@ -22,6 +22,12 @@ export const JERSEYS = {
   'slate-lime': ['#334155', '#a3e635'],
   'burgundy-sand': ['#6b1f3a', '#f2c078'],
   'teal-coral': ['#115e59', '#ff9a8b'],
+  'magenta-cyan': ['#e60067', '#00f5d4'],
+  'teal-orange': ['#009688', '#ff6d00'],
+  'purple-mint': ['#5a189a', '#06d6a0'],
+  'green-gold': ['#006233', '#ffc72c'],
+  'wine-sky': ['#7b113a', '#38bdf8'],
+  'cobalt-orange': ['#0052cc', '#ff5400'],
 };
 
 const HEX = /^#(?:[0-9a-f]{3}|[0-9a-f]{6})$/i;
