@@ -381,9 +381,9 @@ export function render(calendar, options = {}) {
   anim('fadeplayer', [[0, 'opacity:0'], [0.4, 'opacity:1'], [tl.end, 'opacity:1'], [tl.end + FADE * 0.5, 'opacity:0']]);
   let hairSvg;
   if (style === 'headband') {
-    hairSvg = r(-3, -26, 6, 2, hairColor) + r(-3, -24, 6, 1, trim) + r(-3, -23, 1, 1, hairColor);
+    hairSvg = r(-2, -27, 4, 1, hairColor) + r(-3, -26, 6, 2, hairColor) + r(-3, -24, 6, 1, trim) + r(-3, -23, 1, 1, hairColor);
   } else if (style === 'long') {
-    hairSvg = r(-3, -26, 6, 2, hairColor) + r(1, -24, 1, 1, hairColor) + r(-4, -24, 2, 7, hairColor);
+    hairSvg = r(-3, -26, 6, 2, hairColor) + r(1, -24, 1, 1, hairColor) + r(-5, -25, 2, 4, hairColor) + r(-4, -21, 1, 4, hairColor);
   } else {
     hairSvg = r(-3, -26, 6, 2, hairColor) + r(1, -24, 1, 1, hairColor);
   }

@@ -106,9 +106,9 @@ test('hair colour and hairstyle options', () => {
   const customHair = render(calendar, { hair: '#e6be8a' });
   assert.match(customHair, /fill="#e6be8a"/);
 
-  // long hair style renders the hair down the back
+  // long hair style renders the plume and flow down the back
   const longHair = render(calendar, { hairStyle: 'long', hair: '#123456' });
-  assert.match(longHair, /<rect x="-4" y="-24" width="2" height="7" fill="#123456"\/>/);
+  assert.match(longHair, /<rect x="-5" y="-25" width="2" height="4" fill="#123456"\/>/);
 
   // headband style renders the headband band in trim colour
   const headband = render(calendar, { hairStyle: 'headband', jersey: 'purple-gold' });
