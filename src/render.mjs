@@ -69,6 +69,24 @@ const colX = (i) => GX + i * STEP + CELL / 2;
 const cellY = (weekday) => GY + weekday * STEP;
 
 export const LEVELS = { NONE: 0, FIRST_QUARTILE: 1, SECOND_QUARTILE: 2, THIRD_QUARTILE: 3, FOURTH_QUARTILE: 4 };
+
+export function longestStreak(weeks) {
+  let current = 0;
+  let longest = 0;
+
+  for (const week of weeks) {
+    for (const day of week.contributionDays) {
+      if (day.contributionCount > 0) {
+        current++;
+        longest = Math.max(longest, current);
+      } else {
+        current = 0;
+      }
+    }
+  }
+
+  return longest;
+}
 const MONTHS = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
 
 const THEMES = {
@@ -253,6 +271,7 @@ const shortDate = (iso) => `${MONTHS[Number(iso.slice(5, 7)) - 1]} ${Number(iso.
 // ---------- render ----------
 
 export function render(calendar, { theme = 'dark', jersey = 'blue-gold', skin = '#c68b59', pace = 1, order = 'oldest-first', user = '' } = {}) {
+  const bestStreak = longestStreak(calendar.weeks);
   const pal = THEMES[theme];
   if (!pal) throw new Error(`theme must be light or dark (got "${theme}")`);
   const [primary, trim] = parseJersey(jersey);
@@ -413,6 +432,8 @@ export function render(calendar, { theme = 'dark', jersey = 'blue-gold', skin = 
     els.push(`<text class="score${k}" x="${W - 12}" y="22" text-anchor="end" font-size="18" font-weight="700" fill="${pal.strong}">${value.toLocaleString('en-US')}</text>`);
   });
   els.push(`<text x="${W - 12}" y="35" text-anchor="end" font-size="9" letter-spacing="1" fill="${pal.text}">PTS</text>`);
+  // Own line under the date, so it doesn't read as "N PTS".
+  els.push(`<text x="${W - 12}" y="64" text-anchor="end" font-size="9" letter-spacing="1" fill="${pal.text}">BEST STREAK ${bestStreak} ${bestStreak === 1 ? 'DAY' : 'DAYS'}</text>`);
   tl.shots.forEach((s, k) => {
     const next = tl.shots[k + 1]?.swish ?? resetAt;
     anim(`last${k}`, windows([[s.swish, next - EPS]], T));
