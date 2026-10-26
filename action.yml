@@ -17,7 +17,7 @@ inputs:
     description: Folder to write hoops.svg (light) and hoops-dark.svg (dark) into.
     default: dist
   jersey:
-    description: A preset (blue-gold, purple-gold, green-white, red-white, orange-navy, black-teal) or two hex colours, "primary,trim".
+    description: A preset name (listed in the README) or two hex colours, "primary,trim".
     default: blue-gold
   skin:
     description: The player's skin tone, as a hex colour.
@@ -31,6 +31,11 @@ inputs:
   pace:
     description: How slowly he plays, from 0.25 (quick) to 4 (very relaxed). 1 is about 3 seconds per shot.
     default: "1"
+  footer:
+    description: Custom text for the bottom line, or "none" to hide it. Defaults to the contribution summary.
+  order:
+    description: Order to play the calendar (oldest-first, newest-first).
+    default: oldest-first
 
 outputs:
   light:

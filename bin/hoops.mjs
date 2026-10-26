@@ -26,14 +26,16 @@ try {
     jersey: args.jersey,
     skin: args.skin,
     hair: args.hair,
-    'hair-style': args['hair-style'] ?? args.hairStyle,
+    hairStyle: args['hair-style'],
     pace: args.pace,
+    order: args.order,
+    footer: args.footer,
   };
   for (const k of Object.keys(options)) if (options[k] === undefined) delete options[k];
 
   if (args.debug !== undefined) {
     // --debug N prints when shot N happens, for freezing frames while tweaking.
-    const tl = buildTimeline(calendar.weeks, { pace: Number(options.pace ?? 1) });
+    const tl = buildTimeline(calendar.weeks, { pace: Number(options.pace ?? 1), order: options.order });
     const s = tl.shots[Number(args.debug)];
     console.error(JSON.stringify({ loop: +tl.T.toFixed(2), shots: tl.shots.length, ...(s && { grab: s.grab, release: s.release, swish: s.swish, day: s.day.date }) }));
   }

@@ -59,11 +59,13 @@ Run it once from the Actions tab, then add this to your README, replacing `you` 
 | `github_user_name` | repo owner | Whose calendar to play. |
 | `github_token` | `github.token` | Reads the public contribution calendar. The default workflow token is enough. |
 | `out_dir` | `dist` | Where `hoops.svg` (light) and `hoops-dark.svg` (dark) are written. |
-| `jersey` | `blue-gold` | `blue-gold`, `purple-gold`, `green-white`, `red-white`, `orange-navy`, `black-teal`, or your own `"primary,trim"` hex pair, e.g. `"#1d428a,#ffc72c"`. |
+| `jersey` | `blue-gold` | A preset: `blue-gold`, `purple-gold`, `green-white`, `red-white`, `orange-navy`, `black-teal`, `slate-lime`, `burgundy-sand`, `teal-coral`, `magenta-cyan`, `teal-orange`, `purple-mint`, `green-gold`, `wine-sky`, `cobalt-orange`. Or your own `"primary,trim"` hex pair, e.g. `"#1d428a,#ffc72c"`. |
 | `skin` | `#c68b59` | The player's skin tone, as a hex colour. |
 | `hair` | `#2b1d14` | The player's hair colour, as a hex colour. |
 | `hair_style` | `short` | The player's hairstyle: `short`, `long`, or `headband`. |
 | `pace` | `1` | How relaxed he plays, from `0.25` (quick) to `4` (very slow). At `1` a shot takes about 3 seconds, so an active year runs several minutes. |
+| `order` | `oldest-first` | `oldest-first` (starts at the beginning of the year) or `newest-first` (starts at the most recent week beside the hoop and walks backwards). |
+| `footer` | contribution summary | Custom text for the bottom line, or `none` to hide it. Long text is scaled to fit the SVG width. |
 
 Outputs: `light` and `dark`, the paths of the two files.
 
@@ -88,7 +90,7 @@ open dist/hoops-dark.svg
 
 ## Contributing
 
-Ideas and pull requests are welcome. Check the [open issues](https://github.com/HarrisJDCampbell/hoops/issues), especially the ones labelled `good first issue`. Run `npm test` before opening a PR.
+Ideas and pull requests are welcome. Check the [open issues](https://github.com/HarrisJDCampbell/hoops/issues), especially the ones labelled `good first issue`. [CONTRIBUTING.md](CONTRIBUTING.md) covers setup, where things live, and how to check an animation by eye.
 
 ## Credits
 
