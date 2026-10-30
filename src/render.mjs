@@ -434,7 +434,7 @@ export function render(calendar, {
   const EYE = '#2b1d14';
   let hairSvg;
   if (style === 'headband') {
-    hairSvg = r(-2, -27, 4, 1, hairColor) + r(-3, -26, 6, 2, hairColor) + r(-3, -24, 6, 1, trim) + r(-3, -23, 1, 1, hairColor);
+    hairSvg = r(-2, -27, 4, 1, hairColor) + r(-3, -26, 6, 1, hairColor) + r(-3, -25, 6, 1, trim) + r(-3, -24, 1, 1, hairColor) + r(1, -24, 1, 1, EYE);
   } else if (style === 'long') {
     hairSvg = r(-3, -26, 6, 2, hairColor) + r(1, -24, 1, 1, EYE) + r(-5, -25, 2, 4, hairColor) + r(-4, -21, 1, 4, hairColor);
   } else {

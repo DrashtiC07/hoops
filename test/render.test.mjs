@@ -225,7 +225,9 @@ test('hair colour and hairstyle options', () => {
 
   // headband style renders the headband band in trim colour
   const headband = render(calendar, { hairStyle: 'headband', jersey: 'purple-gold' });
-  assert.match(headband, /<rect x="-3" y="-24" width="6" height="1" fill="#fdb927"\/>/);
+  assert.match(headband, /<rect x="-3" y="-25" width="6" height="1" fill="#fdb927"\/>/);
+  // the band sits above the eye, so the eye is still drawn
+  assert.match(headband, /<rect x="1" y="-24" width="1" height="1" fill="#2b1d14"\/>/);
 });
 
 test('custom footer text is escaped, defaults are preserved, and none hides it', () => {

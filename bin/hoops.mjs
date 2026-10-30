@@ -3,7 +3,7 @@
 //
 //   GITHUB_TOKEN=... npx hoops --user octocat [--out dist] [--jersey blue-gold]
 //                    [--skin '#c68b59'] [--hair '#2b1d14'] [--hair-style short]
-//                    [--pace 1] [--fixture calendar.json]
+//                    [--pace 1] [--order oldest-first] [--footer 'text|none'] [--fixture calendar.json]
 
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
